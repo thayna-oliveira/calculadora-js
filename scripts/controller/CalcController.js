@@ -19,7 +19,6 @@ class CalcController {
         this.initialize();
         this.initButtonsEvents();
 
-
     }
 
     initialize() {
@@ -41,12 +40,15 @@ class CalcController {
         let array = events.split(' ');
 
         array.forEach(event => {
+
             element.addEventListener(event, fn, false);
+
         });
 
     }
 
     clearAll() {
+
         this._operation = [];
 
         this.setLastNumberToDisplay();
@@ -295,7 +297,9 @@ class CalcController {
             })
 
             this.addEventListenerAll(btn, "mouseover mouseup mousedown", e => {
+
                 btn.style.cursor = "pointer";
+
             });
         });
 
@@ -304,6 +308,7 @@ class CalcController {
     setDisplayDateTime() {
 
         this.displayDate = this.currentDate.toLocaleDateString(this._locale);
+        
         this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
 
     }
